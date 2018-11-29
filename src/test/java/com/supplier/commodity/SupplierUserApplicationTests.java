@@ -1,4 +1,4 @@
-package com.supplier.user;
+package com.supplier.commodity;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
