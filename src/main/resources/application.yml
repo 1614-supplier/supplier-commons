@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+zuul:
+  routes:
+    supplier-order:
+      path: /supplier/order/**
+      serviceId: supplier-order
+    supplier-commodity:
+      path: /supplier/commodity/**
+      serviceId: supplier-commodity
+    supplier-user:
+      path: /supplier/commodity/**
+      serviceId: supplier-commodity
+
+#registerWithEureka 和 fetchRegistry 设置为false，表明自己属于服务中心主体
